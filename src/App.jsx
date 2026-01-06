@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { 
   Brain, 
   Zap, 
@@ -562,6 +563,7 @@ export default function App() {
             />
           )}
         </main>
+        <Analytics />
       </div>
     </div>
   );
