@@ -19,22 +19,35 @@
   --purple: #a855f7;
 }
 
+html, body, #root {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg-dark);
   color: var(--text);
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
 .app-container {
   min-height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+@media (min-height: 800px) {
+  .app-container {
+    align-items: center;
+    padding: 1rem;
+  }
 }
 
 .bg-glow {
@@ -62,10 +75,11 @@ body {
 }
 
 .main-content {
-  max-width: 56rem;
+  max-width: 48rem;
   width: 100%;
   z-index: 10;
   position: relative;
+  margin: 0 auto;
 }
 
 .header {
@@ -400,7 +414,7 @@ body {
 
 .answer-btn {
   width: 100%;
-  padding: 1.25rem;
+  padding: 1rem 1.25rem;
   border-radius: 0.75rem;
   border: 1px solid;
   text-align: left;
@@ -409,10 +423,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1rem;
   background: transparent;
   color: var(--text);
+  word-break: break-word;
+}
+
+.answer-btn span {
+  flex: 1;
+  min-width: 0;
 }
 
 .answer-default {
